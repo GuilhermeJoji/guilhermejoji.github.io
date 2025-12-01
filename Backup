@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guilherme Joji| Engenharia de Produção</title>
+  <meta name="description" content="Guilherme Joji Ito Silva - Consultor em Engenharia de Produção, Lean Six Sigma, Melhoria de Processos, Inteligência artificial e Análise de Dados." />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #1e293b;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 40%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
+      border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+      padding: 14px 18px;
+      border-radius: 999px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      margin-top: 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 18px;
+      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.8);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .brand-role {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    nav a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      transition: all 0.18s ease;
+    }
+
+    nav a:hover {
+      border-color: rgba(148, 163, 184, 0.6);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    nav a.cta {
+      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 12px 30px rgba(8, 47, 73, 0.8);
+    }
+
+    nav a.cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(8, 47, 73, 0.9);
+    }
+
+    main {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+    }
+
+    h1 {
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 16px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      transition: all 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(8, 47, 73, 0.7);
+    }
+
+    .btn-primary {
+      border: none;
+      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 14px 40px rgba(8, 47, 73, 0.85);
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), #020617);
+      border-radius: 26px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .metric-pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .metric-pill span.value {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero-card-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-card-text {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+    }
+
+    section {
+      margin-top: 16px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 2.2fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 14px 16px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .list li strong {
+      color: #e5e7eb;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 12px 13px;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: default;
+      transition: all 0.18s ease;
+    }
+
+    .project-card:hover {
+      border-color: rgba(56, 189, 248, 0.7);
+      box-shadow: 0 14px 35px rgba(8, 47, 73, 0.9);
+      transform: translateY(-2px);
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-title-row span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .project-card h3 {
+      font-size: 14px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .project-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-row a {
+      font-size: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      transition: all 0.18s;
+    }
+
+    .social-row a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 10px 14px;
+        border-radius: 18px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="brand">
+        <div class="avatar">GJ</div>
+        <div class="brand-text">
+          <span class="brand-name">Guilherme Joji</span>
+          <span class="brand-role">Engenharia de Produção • Inteligência artificial • Lean & Dados</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#competencias">Competências</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#publicacoes">Publicações</a>
+        <a href="#contato" class="cta">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Disponível para projetos de melhoria de processos</span>
+          </div>
+          <h1>
+            Engenharia de Produção aplicada a
+            <span class="hero-highlight">eficiência operacional e dados.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Consultor em melhoria de processos, Lean Six Sigma Black Belt e graduando em Engenharia de Produção.
+            Atuação em projetos de aumento de produtividade, redução de desperdícios, IA e uso de dados para decisões melhores.
+          </p>
+
+          <div class="hero-tags">
+            <span class="tag">Lean & Lean Office</span>
+            <span class="tag">Melhoria Contínua</span>
+            <span class="tag">Análise de Dados com Python</span>
+            <span class="tag">Engenharia de Produção</span>
+            <span class="tag">Inteligência artificial</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#contato" class="btn btn-primary">Fale comigo</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn">
+              Ver perfil no LinkedIn
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Foco em transformar processos complexos em rotinas enxutas, medíveis e sustentáveis.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-metric-row">
+            <div class="metric-pill">
+              <span class="value">Lean Six Sigma</span>
+              <span>Black Belt</span>
+            </div>
+            <div class="metric-pill">
+              <span class="value">Eng. Produção</span>
+              <span>em formação</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="hero-card-title">Da engenharia ao chão de fábrica e ao escritório.</div>
+            <p class="hero-card-text">
+              Experiência em consultoria de melhoria de processos, atuando com 5S, controladoria, custos,
+              Lean Office e produtividade em ambientes industriais e administrativos.
+            </p>
+          </div>
+
+          <div>
+            <div class="hero-card-title">Formação complementar</div>
+            <p class="hero-card-text">
+              Cursos em Negócios (Harvard) e Análise de Dados com Python (USP), unindo visão de gestão e capacidade analítica.
+            </p>
+            <div class="chips">
+              <span class="chip">Negócios • Harvard</span>
+              <span class="chip">Python & Dados • USP</span>
+              <span class="chip">Projetos de Melhoria</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- SOBRE / COMPETÊNCIAS -->
+      <section id="sobre">
+        <div class="section-title">Sobre & Competências</div>
+        <div class="grid">
+          <div class="card">
+            <h2>Sobre mim</h2>
+            <p>
+              Sou Guilherme Joji Ito Silva, profissional de Engenharia de Produção com experiência em consultoria
+              de processos e melhoria contínua. Já atuei em projetos de eficiência operacional, implementação de Lean
+              e reorganização de fluxos administrativos, sempre com foco em dados e resultados práticos.
+            </p>
+            <ul class="list">
+              <li><strong>Área de atuação:</strong> Engenharia de Produção, Lean, produtividade, dados</li>
+              <li><strong>Interesses:</strong> otimização de processos, métricas, decisões baseadas em evidências</li>
+              <li><strong>Modelo de trabalho:</strong> projetos, consultoria, treinamentos e desenvolvimento</li>
+            </ul>
+          </div>
+
+          <div class="card" id="competencias">
+            <h2>Competências</h2>
+            <p>Algumas das competências que aplico em projetos e estudos:</p>
+            <div class="pill-row">
+              <span class="pill">Lean Manufacturing & Lean Office</span>
+              <span class="pill">5S & Melhoria Contínua</span>
+              <span class="pill">Mapeamento de Fluxo de Valor</span>
+              <span class="pill">Análise de Dados com Python</span>
+              <span class="pill">Visualização de Dados</span>
+              <span class="pill">Produtividade & Eficiência</span>
+              <span class="pill">Engenharia de Processos</span>
+              <span class="pill">Gestão por Indicadores</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section id="projetos">
+        <div class="section-title">Projetos & Portfólio</div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-title-row">
+              <h3>Dashboard de produtividade em processos</h3>
+              <span>Python • Dados</span>
+            </div>
+            <p>
+              Projeto em Python para analisar produtividade de processos, com uso de Pandas e visualizações
+              para identificar gargalos, variações e oportunidades de melhoria.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Visualização</span>
+              <span class="project-tag">Tomada de decisão</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-title-row">
+              <h3>Simulação de fluxo de atendimento</h3>
+              <span>Simulação</span>
+            </div>
+            <p>
+              Modelo de simulação para avaliar filas, tempo de espera e utilização de recursos em um fluxo
+              de atendimento, permitindo testar cenários e propor melhorias.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">SimPy (ou similar)</span>
+              <span class="project-tag">Eng. de Produção</span>
+              <span class="project-tag">Melhoria de processos</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-title-row">
+              <h3>Ferramentas Lean em código</h3>
+              <span>Lean</span>
+            </div>
+            <p>
+              Scripts e planilhas inteligentes para apoiar cálculo de takt time, OEE e análise de desperdícios,
+              conectando prática Lean com automação e análise.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Lean</span>
+              <span class="project-tag">Automação</span>
+              <span class="project-tag">Engenharia</span>
+            </div>
+          </article>
+        </div>
+        <p class="hero-note" style="margin-top:8px;">
+          Em breve: link direto para meus repositórios públicos no GitHub com código, documentação e exemplos.
+        </p>
+      </section>
+
+      <!-- PUBLICAÇÕES / LATTES -->
+      <section id="publicacoes">
+        <div class="section-title">Publicações & Lattes</div>
+        <div class="grid">
+          <div class="card">
+            <h2>Currículo Lattes</h2>
+            <p>
+              Meu currículo acadêmico e técnico está disponível na Plataforma Lattes, com detalhes sobre formação,
+              cursos, experiências e atividades de extensão.
+            </p>
+            <ul class="list">
+              <li><strong>Formação:</strong> Técnico em Mecatrônica; graduando em Engenharia de Produção</li>
+              <li><strong>Certificação:</strong> Lean Six Sigma Black Belt</li>
+              <li><strong>Complementar:</strong> Negócios (Harvard); Análise de Dados com Python (USP)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>Conteúdos e artigos</h2>
+            <p>
+              Compartilho aprendizados sobre Lean, produtividade, dados e carreira em engenharia em publicações online.
+              Alguns temas que costumo abordar:
+            </p>
+            <ul class="list">
+              <li>Aplicações práticas de Lean Office em processos administrativos</li>
+              <li>Uso de dados para melhorar decisões de engenharia e gestão</li>
+              <li>Reflexões sobre formação em engenharia e prática profissional</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato">
+        <div class="section-title">Contato</div>
+        <div class="card">
+          <h2>Vamos conversar?</h2>
+          <p>
+            Se você tem interesse em discutir projetos de melhoria de processos, consultoria, dados aplicados à
+            engenharia, Inteligência artificial aplicada ou treinamentos, fico à disposição para conversar.
+          </p>
+          <div class="pill-row" style="margin-top:10px;">
+            <span class="pill">Projetos de melhoria contínua</span>
+            <span class="pill">Consultoria e diagnóstico</span>
+            <span class="pill">Treinamentos e workshops</span>
+            <span class="pill">Inteligência Artificial aplicada</span>
+          </div>
+
+          <div class="pill-row" style="margin-top:12px;">
+            <span class="pill">📍 São Paulo • SP • Brasil</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> • Guilherme Joji Ito Silva</span>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Currículo Lattes</a>
+        <a href="mailto:seuemail@exemplo.com">E-mail</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
