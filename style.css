@@ -8,7 +8,7 @@
 
 body {
   background-color: #ffffff; /* fundo branco */
-  color: #000000; /* texto principal preto */
+  color: #000000; /* textos principais pretos */
   overflow-x: hidden;
 }
 
@@ -19,13 +19,13 @@ a {
 }
 
 a:hover {
-  color: #ff6347; /* laranja claro */
+  color: #ff6347; /* laranja claro no hover */
 }
 
 /* =================== BOTÕES =================== */
 .botao-cv, .btn-contato {
   background-color: #1e90ff; /* azul */
-  color: #ffffff;
+  color: #ffffff; /* letras brancas */
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -34,12 +34,12 @@ a:hover {
 }
 
 .botao-cv:hover, .btn-contato:hover {
-  background-color: #00bfff;
+  background-color: #00bfff; /* azul claro */
 }
 
 /* =================== DEGRADÊ =================== */
 .texto-degrade {
-  background: linear-gradient(90deg, #1e90ff, #00ff7f); /* azul para verde */
+  background: linear-gradient(90deg, #1e90ff, #00ff7f); /* azul → verde */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
