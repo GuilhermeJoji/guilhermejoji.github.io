@@ -168,7 +168,7 @@ header.header-entrada {
 
 .image-conteiner img {
   width: 260px;
-  height: 260px;
+  height: 360px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid rgba(30,144,255,0.35);
