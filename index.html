@@ -1,258 +1,221 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <title>Portfólio Lorrane Silva</title>
+  <title>Guilherme Joji</title>
 </head>
 
 <body>
-    <header class="header-entrada">
-        <h2 class="logo"><span class="texto-degrade">LS.</span></h2>
+  <header class="header-entrada">
+    <h2 class="logo"><span class="texto-degrade">GJ.</span></h2>
 
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
 
-        <div class="menu-overlay" id="menu-overlay" onclick="toggleMenu()"></div>
+    <div class="menu-overlay" id="menu-overlay" onclick="toggleMenu()"></div>
 
+    <nav class="nav" id="nav-menu" aria-label="Menu">
+      <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">✖</button>
+      <ul>
+        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
+        <li><a href="#habilidades" onclick="toggleMenu()">Habilidades</a></li>
+        <li><a href="#projetos" onclick="toggleMenu()">Projetos</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Soft Skills</a></li>
+        <li><a class="contato-btn" href="#contato" onclick="toggleMenu()">Contato</a></li>
+      </ul>
+    </nav>
 
-        <nav class="nav" id="nav-menu">
-            <button class="close-btn" onclick="toggleMenu()">✖</button>
-            <ul>
-                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
-                <li><a href="#habilidades" onclick="toggleMenu()">Habilidades</a></li>
-                <li><a href="#projetos" onclick="toggleMenu()">Projetos</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Soft-Skills</a></li>
-                <li><a class="contato-btn" href="#contato" onclick="toggleMenu()">Contato</a></li>
-            </ul>
-        </nav>
+    <ul class="links-descktop">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sobre">Sobre mim</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#skills">Soft Skills</a></li>
+      <li class="border"><a href="#contato">Contato</a></li>
+    </ul>
+  </header>
 
-        <ul class="links-descktop">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre mim</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#skills">Soft Skills</a></li>
-            <li class="border"><a href="#contato">Contato</a></li>
-        </ul>
-    </header>
+  <main>
+    <section id="home" class="secao-home">
+      <div id="particles-js"></div>
 
+      <div class="home-container">
+        <div class="topo-site slide-in-left">
+          <h1>Olá, meu nome é <span class="texto-degrade guilherme">Guilherme</span></h1>
+          <h2>Sou <span class="texto-degrade" id="typing"></span></h2>
+          <p class="slogan">Desenvolvendo hoje as soluções que transformarão o amanhã.</p>
 
-    <div class="overlay" id="overlay"></div>
-    <main>
-        <section id="home">
-            <div class="flex">
-
-                <div id="particles-js"></div>
-
-                <div class="home-container">
-                    <div class="topo-home">
-                        <div class="topo-site"> <br> <br>
-                            <div class="slide-in-left">
-                                <h1>Olá, meu nome é <span class="texto-degrade" class="lorrane">Lorrane</span></h1>
-                                <h2>Sou <span class="texto-degrade" id="typing"></span></h2>
-                                <p class="slogan">Desenvolvendo hoje as soluções que transformarão o amanhã.</p>
-                            </div>
-                        </div>
-
-                        <div class="arrow-down" id="animated-image">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="image-conteiner">
-                        <img id="animated-image" src="img/minhafotoprofissional2.PNG" alt="Minha foto">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="slide-in-left">
-                <div class="social-icons">
-                    <a href="https://github.com/LoohSilva" class="github" target="_blank" rel="noopener"
-                        title="meu github"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/lorranesilva1052" class="linkedin" target="_blank"
-                        rel="noopener" title="meu linkedin"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:Lorrane.silva1052@gmail.com" class="gmail"><i class="fas fa-envelope"
-                            title="meu e-mail"></i></a>
-                </div>
-            </div>
-
-            <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-        </section>
-
-
-        <div class="background-color">
-
-            <section id="sobre">
-                <div class="conteudo">
-                    <div class="texto-sobre">
-                        <h2 class="title">Sobre <span class="texto-degrade">mim</span></h2>
-                        <hr class="linha-elegante">
-                        <p>
-                            Sou <strong class="texto-degrade">Lorrane Rodrigues Silva</span></strong>, estudante de
-                            <strong class="texto-degrade">Ciência da Computação</strong> e apaixonada por tecnologia.
-                            Estou me especializando em <strong class="texto-degrade">Desenvolvimento Full Stack</strong>
-                            e criando projetos com <strong class="texto-degrade">HTML, CSS e JavaScript</strong> durante
-                            minha formação.
-                        </p>
-                        <p>
-                            Atualmente, estudo <strong class="texto-degrade">TypeScript, Sass, Bootstrap, React,
-                                Next.js, Node.js, MongoDB e SQL</strong>, sempre buscando aprendizado contínuo para me
-                            tornar uma desenvolvedora completa.
-                        </p>
-                        <p>
-                            Meu objetivo é aplicar meus conhecimentos para criar soluções inovadoras e contribuir para o
-                            crescimento da empresa com dedicação e criatividade.
-                        </p>
-                        <a href="https://docs.google.com/document/d/1ryuu5a_9Y8PmaE-pu2jRdORm8a1GwxXf/edit?usp=drivesdk&ouid=105820646778596781668&rtpof=true&sd=true"
-                            target="_blank" class="botao-cv">
-                            <i class="fa-solid fa-download"></i>Baixar Currículo </a>
-                    </div>
-                </div>
+          <div class="social-icons">
+            <a href="https://github.com/GuilhermeJoji" class="github" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/guilherme-joji/" class="linkedin" target="_blank" rel="noopener"
+              title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:guijoji@gmail.com" class="gmail" title="E-mail">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
         </div>
 
-        <img class="imagem-sobre" src="img/iamac.PNG" alt="Foto de Lorrane Silva">
-        </section>
+        <div class="image-conteiner slide-in-right">
+          <img id="animated-photo" src="img/minhafotoprofissional2.PNG" alt="Foto de Guilherme Joji" />
+        </div>
+      </div>
 
+      <a class="arrow-down" href="#sobre" aria-label="Ir para Sobre">
+        <span></span><span></span><span></span>
+      </a>
+    </section>
 
-        <section id="habilidades" class="sessao-habilidades">
-            <div class="glass">
-                <div class="texto-degrade">
-                    <h2> <span class="texto-degrade">Habilidades</span></h2>
-                    <hr class="linha-elegante">
-                    <div class="habilidades-container">
-                        <i class="fab fa-html5 html-icon"></i>
-                        <i class="fab fa-css3-alt css-icon"></i>
-                        <i class="fab fa-js-square js-icon"></i>
-                        <i class="fab fa-github github-icon"></i>
-                        <i class="fab fa-git-alt git-icon"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="background-color">
+      <section id="sobre" class="secao">
+        <div class="conteudo">
+          <div class="texto-sobre">
+            <h2 class="title">Sobre <span class="texto-degrade">mim</span></h2>
+            <hr class="linha-elegante" />
 
+            <p>
+              Sou <strong class="texto-degrade">Guilherme Joji</strong>,
+              <strong class="texto-degrade">Engenheiro de Produção</strong> e
+              <strong class="texto-degrade">Lean Six Sigma Black Belt</strong>, com formação técnica em
+              <strong class="texto-degrade">Mecatrônica</strong>. :contentReference[oaicite:1]{index=1}
+            </p>
 
+            <p>
+              Atuo como <strong class="texto-degrade">Consultor em Melhoria Contínua</strong>, apoiando empresas —
+              especialmente <strong class="texto-degrade">indústrias, logística e serviços</strong> — a aumentarem
+              eficiência, reduzirem custos e acelerarem resultados. :contentReference[oaicite:2]{index=2}
+            </p>
 
-        <section id="projetos" class="sessao-projetos">
-            <h2><span class="texto-degrade">Projetos</span></h2>
-            <hr class="linha-elegante">
-            <div class="projetos-container">
+            <p>
+              Integro metodologias de <strong class="texto-degrade">Excelência Operacional</strong> (Lean, Six Sigma,
+              Kaizen, 5S) com <strong class="texto-degrade">Transformação Digital</strong> (RPA, IA e dados). Em um
+              projeto que liderei, ajudei uma empresa de logística a reduzir em
+              <strong class="texto-degrade">87%</strong> o tempo de execução de processos em
+              <strong class="texto-degrade">1 mês</strong>. :contentReference[oaicite:3]{index=3}
+            </p>
 
+            <a href="https://docs.google.com/document/d/1ryuu5a_9Y8PmaE-pu2jRdORm8a1GwxXf/edit?usp=drivesdk"
+              target="_blank" class="botao-cv" rel="noopener">
+              <i class="fa-solid fa-download"></i> Baixar Currículo
+            </a>
+          </div>
 
-                <div class="card-projeto">
-                    <img src="img/captura de tela portifolio.png" alt="Imagem do Projeto 1">
-                    <div class="descricao-projeto">
-                        <p>Portfólio Pessoal — Projeto desenvolvido com HTML, CSS e JavaScript, totalmente responsivo.
-                            Exibe informações sobre mim, habilidades e projetos. Foco em design moderno e navegação
-                            fluida.
-                        </p>
-                        <a href="#home" target="_blank" rel="noopener" title="Projeto citações"> 🔗 Ver
-                            Projeto</a>
-                    </div>
-                </div>
-
-
-                  <div class="card-projeto">
-                    <img src="img/site assistenia tecnia jr.png" alt"Projeto nike" title="Projeto assistenia tecnica">
-                    <div class="descricao-projeto">
-                        <p>Assistência Técnica Jr.Cell — Projeto Freelancer
-                        Site institucional para assistência técnica de celulares. Simulação de presença digital real com foco em usabilidade,
-                        contato rápido e conversão de clientes.</p>
-                        <a href="https://jrcellassistencia.netlify.app/" target="_blank" rel="noopener"> 🔗 Ver
-                            Projeto</a>
-                    </div>
-                </div>
-
-                <div class="card-projeto">
-                    <img src="img/projeto citacoes.png" alt="Imagem do Projeto 1">
-                    <div class="descricao-projeto">
-                        <p>Gerador de Citações Motivacionais — Projeto em HTML, CSS e JavaScript focado em lógica com
-                            exibição aleatória de frases via clique. Treino de arrays, condições (if/else) e manipulação
-                            do DOM.
-
-                        </p>
-                        <a href="https://loohsilva.github.io/Gerador-cita-oes/" target="_blank" rel="noopener"
-                            title="Projeto citações"> 🔗 Ver
-                            Projeto</a>
-                    </div>
-                </div>
-
-                <div class="card-projeto">
-                    <img src="img/projeto pizzaria.png" alt="Imagem do Projeto 2" title="Projeto pizzaria">
-                    <div class="descricao-projeto">
-                        <p>Site de Pizzaria – Alessio’s — Projeto fictício com HTML e CSS, focado em design responsivo e
-                            UX. Inclui cardápio interativo, seção “Sobre Nós” e área de contato simulando app real.</p>
-                        <a href="https://loohsilva.github.io/Pizzaria-Alessios/" target="_blank" rel="noopener"> 🔗 Ver
-                            Projeto</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="skills" class="soft-skills-bg">
-            <div class="soft-skills">
-                <h2 class="texto-degrade">Soft Skills</h2>
-                <hr class="linha-elegante">
-                <p class="intro">Nem só de código vive uma dev. Aqui estão as habilidades que me ajudam a trabalhar bem
-                    em qualquer time, em qualquer projeto.</p>
-                <ul class="soft-list">
-                    <li><strong>Comunicação clara:</strong> Explico ideias técnicas sem enrolar.</li>
-                    <li><strong>Trabalho em equipe:</strong> Me dou bem com todos e colaboro de verdade.</li>
-                    <li><strong>Resiliência:</strong> Levo erro como aprendizado e sigo firme.</li>
-                    <li><strong>Organização:</strong> Meus códigos e tarefas são sempre na linha.</li>
-                    <li><strong>Proatividade:</strong> Não espero mandarem, já vou lá e faço.</li>
-                    <li><strong>Empatia:</strong> Entendo o outro, porque tecnologia é feita pra gente, não só pra
-                        máquina.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contato">
-            <h2 class="titulo-contato"> <span class="texto-degrade">Entre em Contato</span></h2>
-            <hr class="linha-elegante">
-            <div class="formulario-container">
-                <form id="formContato">
-
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
-
-
-
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
-
-
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem"></textarea>
-
-                    <button type="submit" class="btn-contato" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
+          <img class="imagem-sobre" src="img/iamac.PNG" alt="Foto / ilustração do Guilherme Joji" />
+        </div>
+      </section>
     </div>
-    <footer>
-        <p>Copyright © 2026 by Lorrane Silva | All Rights Reserved.</p>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <section id="habilidades" class="sessao-habilidades secao">
+      <div class="glass">
+        <h2><span class="texto-degrade">Habilidades</span></h2>
+        <hr class="linha-elegante" />
+        <div class="habilidades-container">
+          <i class="fab fa-html5 html-icon" title="HTML"></i>
+          <i class="fab fa-css3-alt css-icon" title="CSS"></i>
+          <i class="fab fa-js-square js-icon" title="JavaScript"></i>
+          <i class="fab fa-github github-icon" title="GitHub"></i>
+          <i class="fab fa-git-alt git-icon" title="Git"></i>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="projetos" class="sessao-projetos secao">
+      <h2><span class="texto-degrade">Projetos</span></h2>
+      <hr class="linha-elegante" />
 
+      <div class="projetos-container">
+        <div class="card-projeto">
+          <img src="img/captura de tela portifolio.png" alt="Portfólio Pessoal" />
+          <div class="descricao-projeto">
+            <p>Portfólio Pessoal — HTML, CSS e JavaScript, responsivo, navegação fluida e design moderno.</p>
+            <a href="#home" rel="noopener" title="Projeto Portfólio">🔗 Ver Projeto</a>
+          </div>
+        </div>
+
+        <div class="card-projeto">
+          <img src="img/site assistenia tecnia jr.png" alt="Site Jr.Cell" title="Projeto assistência técnica" />
+          <div class="descricao-projeto">
+            <p>
+              Assistência Técnica Jr.Cell — Site institucional com foco em usabilidade, contato rápido e conversão.
+            </p>
+            <a href="https://jrcellassistencia.netlify.app/" target="_blank" rel="noopener">🔗 Ver Projeto</a>
+          </div>
+        </div>
+
+        <div class="card-projeto">
+          <img src="img/projeto citacoes.png" alt="Gerador de citações" />
+          <div class="descricao-projeto">
+            <p>Gerador de Citações — lógica JS, arrays, condições e manipulação do DOM.</p>
+            <a href="https://loohsilva.github.io/Gerador-cita-oes/" target="_blank" rel="noopener">🔗 Ver Projeto</a>
+          </div>
+        </div>
+
+        <div class="card-projeto">
+          <img src="img/projeto pizzaria.png" alt="Projeto Pizzaria" />
+          <div class="descricao-projeto">
+            <p>Site de Pizzaria — HTML/CSS com design responsivo e UX.</p>
+            <a href="https://loohsilva.github.io/Pizzaria-Alessios/" target="_blank" rel="noopener">🔗 Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="soft-skills-bg secao">
+      <div class="soft-skills">
+        <h2 class="texto-degrade">Soft Skills</h2>
+        <hr class="linha-elegante" />
+        <p class="intro">Habilidades que me ajudam a trabalhar bem em qualquer time e projeto.</p>
+        <ul class="soft-list">
+          <li><strong>Comunicação clara:</strong> explico ideias com objetividade.</li>
+          <li><strong>Trabalho em equipe:</strong> colaboração real e respeito.</li>
+          <li><strong>Resiliência:</strong> aprendo com erros e evoluo rápido.</li>
+          <li><strong>Organização:</strong> rotina e entregas consistentes.</li>
+          <li><strong>Proatividade:</strong> tomo iniciativa e resolvo.</li>
+          <li><strong>Empatia:</strong> tecnologia feita para pessoas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2 class="titulo-contato"><span class="texto-degrade">Entre em Contato</span></h2>
+      <hr class="linha-elegante" />
+
+      <div class="formulario-container">
+        <form id="formContato">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required placeholder="Digite seu nome" />
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required placeholder="Digite seu e-mail" />
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem"></textarea>
+
+          <button type="submit" class="btn-contato" onclick="enviarWhatsApp(event)">
+            Enviar para WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2026 by Guilherme Joji</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
