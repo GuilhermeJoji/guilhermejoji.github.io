@@ -23,7 +23,8 @@ a:hover {
 }
 
 /* =================== BOTÕES =================== */
-.botao-cv, .btn-contato {
+.botao-cv,
+.btn-contato {
   background-color: #1e90ff; /* azul */
   color: #ffffff; /* letras brancas */
   border: none;
@@ -33,7 +34,8 @@ a:hover {
   transition: 0.3s;
 }
 
-.botao-cv:hover, .btn-contato:hover {
+.botao-cv:hover,
+.btn-contato:hover {
   background-color: #00bfff; /* azul claro */
 }
 
@@ -62,12 +64,25 @@ header.header-entrada {
   font-weight: bold;
 }
 
+/* Botão do menu mobile (corrigido: mostrar no mobile via media query) */
 .menu-toggle {
   font-size: 24px;
   background: none;
   border: none;
   cursor: pointer;
   display: none;
+}
+
+/* Menu desktop (corrigido: .links-descktop não tinha CSS) */
+.links-descktop {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.links-descktop li a {
+  font-weight: 500;
 }
 
 .nav {
@@ -85,29 +100,43 @@ header.header-entrada {
   font-weight: 500;
 }
 
-/* Menu mobile */
-#nav-menu.active {
-  transform: translateX(0);
+/* Botão fechar menu (corrigido: não tinha estilo) */
+.close-btn {
+  display: none; /* no desktop não precisa aparecer */
+  align-self: flex-end;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Menu overlay */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
 }
 
 .menu-overlay.active {
   display: block;
 }
 
-.menu-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 998;
+/* Menu mobile ativo */
+#nav-menu.active {
+  transform: translateX(0);
 }
 
 /* =================== HOME =================== */
+/* Corrigido: no desktop ficar lado-a-lado (mais compatível com o HTML do template) */
 .home-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-top: 120px; /* compensar header fixo */
+  justify-content: space-between;
+  gap: 40px;
+  padding: 120px 50px 40px; /* compensar header fixo */
 }
 
 .arrow-down span {
@@ -122,9 +151,19 @@ header.header-entrada {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
-  40% { transform: translateY(10px) rotate(45deg); }
-  60% { transform: translateY(5px) rotate(45deg); }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateY(10px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(5px) rotate(45deg);
+  }
 }
 
 .image-conteiner img {
@@ -133,11 +172,42 @@ header.header-entrada {
   margin-top: 20px;
 }
 
+/* Corrigido: social-icons existe no HTML mas não tinha CSS */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  padding: 0 50px 40px;
+}
+
+.social-icons a i {
+  font-size: 26px;
+}
+
+/* =================== ELEMENTOS DO TEMPLATE (faltando) =================== */
+.linha-elegante {
+  width: 80px;
+  height: 3px;
+  background: #1e90ff;
+  border: 0;
+  margin: 12px 0 24px;
+}
+
+/* Corrigido: background-color existe no HTML e não tinha CSS */
+.background-color {
+  width: 100%;
+}
+
 /* =================== SOBRE =================== */
 #sobre .conteudo {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 40px;
   padding: 80px 50px;
+}
+
+.texto-sobre {
+  flex: 1;
 }
 
 .texto-sobre h2 {
@@ -151,7 +221,9 @@ header.header-entrada {
 }
 
 .imagem-sobre {
+  flex: 1;
   max-width: 400px;
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -185,7 +257,7 @@ header.header-entrada {
 .card-projeto {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   overflow: hidden;
   transition: transform 0.3s;
@@ -236,7 +308,8 @@ header.header-entrada {
   gap: 15px;
 }
 
-#formContato input, #formContato textarea {
+#formContato input,
+#formContato textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -255,19 +328,69 @@ footer {
 
 /* =================== RESPONSIVIDADE =================== */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; }
-  .nav { 
+  /* corrigido: mostrar botão no mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* corrigido: esconder menu desktop no mobile */
+  .links-descktop {
+    display: none;
+  }
+
+  /* corrigido: menu mobile deve usar transform, não right:-100% */
+  .nav {
     position: fixed;
-    top: 0; right: -100%;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
     width: 250px;
     height: 100%;
     background-color: #ffffff;
     flex-direction: column;
     padding: 50px 20px;
-    transition: 0.3s;
+    transition: transform 0.3s;
     z-index: 999;
   }
-  .nav ul { flex-direction: column; gap: 20px; }
-  #sobre .conteudo { flex-direction: column; text-align: center; }
-  .projetos-container { flex-direction: column; align-items: center; }
+
+  .close-btn {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .home-container {
+    flex-direction: column;
+    padding: 120px 20px 40px;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    padding: 0 20px 30px;
+  }
+
+  #sobre .conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .soft-list {
+    padding-left: 20px;
+  }
+
+  .projetos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* opcional (corrigido): garantir que no desktop o botão não apareça */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
 }
